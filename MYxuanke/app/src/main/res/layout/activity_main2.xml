@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="qq.app01.com.myxuanke.Main2Activity">
+
+    <RelativeLayout
+        android:id="@+id/a2r1"
+        android:layout_width="match_parent"
+        android:layout_height="230dp"
+        android:background="@color/sy_color">
+        <ImageView
+            android:layout_margin="6dp"
+            android:onClick="fanhui"
+            android:src="@drawable/fanhui"
+            android:contentDescription="@string/meizhaodao"
+            android:layout_width="30dp"
+            android:layout_height="30dp" />
+        <ImageView
+            android:id="@+id/img1"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:contentDescription="@string/meizhaodao"
+            android:scaleType="fitXY"
+            android:src="@drawable/logo" />
+
+        <TextView
+            android:id="@+id/text1"
+            android:textColor="@color/text_color"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_below="@id/img1"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:textSize="40sp"
+           />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/a2r2"
+        android:layout_below="@id/a2r1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+    </RelativeLayout>
+
+</RelativeLayout>

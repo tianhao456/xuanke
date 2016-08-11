@@ -1,0 +1,17 @@
+<resources>
+    <string name="app_name">学生选课</string>
+    <string name="meizhaodao">图片加载不出来</string>
+    <string name="t1">选修课程</string>
+    <string name="t2">课程信息</string>
+    <string name="t3">查询学生信息</string>
+    <string name="t4">课程详细信息</string>
+    <string name="t5">帮助</string>
+    <string name="t6">退出系统</string>
+    <string name="bangzhutxt">这里是帮助内容</string>
+    <string name="chaxun">查询结果</string>
+    <string name="chaxunxinxi">提交信息</string>
+    <string name="name">姓名:</string>
+    <string name="sex">性别:</string>
+    <string name="age">年龄:</string>
+    <string name="jieguotxt">这里是查询结果</string>
+</resources>
