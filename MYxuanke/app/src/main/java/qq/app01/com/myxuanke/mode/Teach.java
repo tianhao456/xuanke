@@ -6,6 +6,8 @@ package qq.app01.com.myxuanke.mode;
 public class Teach {
     public String  name;
 
+    public Teach() {
+    }
 
     public Teach(String name) {
         this.name = name;

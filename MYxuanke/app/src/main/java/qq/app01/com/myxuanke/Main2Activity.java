@@ -15,6 +15,7 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.GridView;
 import android.widget.LinearLayout;
+import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 import android.widget.RelativeLayout;
@@ -24,10 +25,15 @@ import com.google.android.gms.appindexing.Action;
 import com.google.android.gms.appindexing.AppIndex;
 import com.google.android.gms.common.api.GoogleApiClient;
 
+import java.util.ArrayList;
+import java.util.List;
+
+import qq.app01.com.myxuanke.mode.Course;
+
 import static android.view.View.generateViewId;
 
 public class Main2Activity extends AppCompatActivity {
-
+    public ListView listView;
     /**
      * ATTENTION: This was auto-generated to implement the App Indexing API.
      * See https://g.co/AppIndexing/AndroidStudio for more information.
@@ -40,6 +46,7 @@ public class Main2Activity extends AppCompatActivity {
         setContentView(R.layout.activity_main2);
 
         final Intent intent = getIntent();
+        listView = (ListView) findViewById(R.id.listView);
         final String massage = intent.getStringExtra(MainActivity.EXTRA_MESSAGE);
         final TextView textView = (TextView) findViewById(R.id.text1);
         final RelativeLayout relativeLayout = (RelativeLayout) findViewById(R.id.a2r2);
@@ -47,9 +54,10 @@ public class Main2Activity extends AppCompatActivity {
         assert textView != null;
         if ("rl1".equals(massage)) {
             textView.setText(R.string.t1);
+//            listView.setVisibility(View.GONE);
             relativeLayout.setGravity(Gravity.CENTER);
 
-            RelativeLayout r1 = new RelativeLayout(Main2Activity.this);
+            final RelativeLayout r1 = new RelativeLayout(Main2Activity.this);
             r1.setId(generateViewId());
             TextView textView1 = new TextView(Main2Activity.this);
             textView1.setText(R.string.name);
@@ -69,7 +77,7 @@ public class Main2Activity extends AppCompatActivity {
             relativeLayout.addView(r1);
 
 
-            RelativeLayout r3 = new RelativeLayout(Main2Activity.this);
+            final RelativeLayout r3 = new RelativeLayout(Main2Activity.this);
             r3.setId(generateViewId());
 
             TextView textView3 = new TextView(Main2Activity.this);
@@ -110,8 +118,8 @@ public class Main2Activity extends AppCompatActivity {
             relativeLayout.addView(r3);
 
 
-            RelativeLayout r2 = new RelativeLayout(Main2Activity.this);
-               r2.setId(generateViewId());
+            final RelativeLayout r2 = new RelativeLayout(Main2Activity.this);
+            r2.setId(generateViewId());
 
             TextView textView2 = new TextView(Main2Activity.this);
             textView2.setText(R.string.age);
@@ -140,19 +148,26 @@ public class Main2Activity extends AppCompatActivity {
             button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    textView.setText(R.string.chaxun);
-
-
+                    textView.setText(R.string.xuanze);
+                    r1.setVisibility(View.GONE);
+                    r2.setVisibility(View.GONE);
+                    r3.setVisibility(View.GONE);
                     button.setVisibility(View.GONE);
+                    listView.setVisibility(View.VISIBLE);
 
-                    final TextView textView1 = new TextView(Main2Activity.this);
-                    textView1.setText(R.string.jieguotxt);
-                    textView1.setTextSize(35);
-                    textView1.setTextColor(ContextCompat.getColor(textView1.getContext(), R.color.sy_color));
-                    RelativeLayout.LayoutParams t1params = new RelativeLayout.LayoutParams(ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-                    t1params.addRule(RelativeLayout.CENTER_HORIZONTAL);
-                    textView1.setLayoutParams(t1params);
-                    relativeLayout.addView(textView1);
+
+                    Courseadapter courseadapter = new Courseadapter(Main2Activity.this);
+                    listView.setAdapter(courseadapter);
+                    List<Course> courseList = new ArrayList<Course>();
+                    courseList.add(new Course());
+                    courseList.add(new Course());
+                    courseList.add(new Course());
+                    courseList.add(new Course());
+                    courseList.add(new Course());
+                    courseList.add(new Course());
+
+                    courseadapter.setList(courseList);
+
 
                 }
             });
